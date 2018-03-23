@@ -1,0 +1,225 @@
+{
+	"id": "a50ad237-9aa1-348a-74d1-a7142504f8a5",
+	"name": "UserLogin",
+	"description": "",
+	"order": [
+		"80cd24bf-256a-355b-9c37-d64e5696671d"
+	],
+	"folders": [
+		{
+			"name": "test",
+			"description": "",
+			"collectionId": "a50ad237-9aa1-348a-74d1-a7142504f8a5",
+			"order": [
+				"bc2ea94f-1883-2a87-5ef1-78ad3609da8e"
+			],
+			"owner": 0,
+			"folders_order": [],
+			"auth": null,
+			"id": "164e1c36-88b6-0e85-f331-949d92e1e2ce"
+		},
+		{
+			"name": "test2",
+			"description": "",
+			"collectionId": "a50ad237-9aa1-348a-74d1-a7142504f8a5",
+			"order": [
+				"c8947c64-bf5e-6f1a-b12f-cb3694e59f7b"
+			],
+			"owner": 0,
+			"folders_order": [],
+			"auth": null,
+			"id": "0884c915-35bf-e8d2-3d62-c87bd7d2e3ed"
+		}
+	],
+	"folders_order": [
+		"164e1c36-88b6-0e85-f331-949d92e1e2ce",
+		"0884c915-35bf-e8d2-3d62-c87bd7d2e3ed"
+	],
+	"timestamp": 1519297667202,
+	"owner": 0,
+	"public": false,
+	"events": [],
+	"variables": [],
+	"auth": null,
+	"requests": [
+		{
+			"id": "80cd24bf-256a-355b-9c37-d64e5696671d",
+			"headers": "",
+			"headerData": [],
+			"url": "http://postman-echo.com/get?Id={{id}}&name={{name}}",
+			"queryParams": [
+				{
+					"key": "Id",
+					"value": "{{id}}",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "name",
+					"value": "{{name}}",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "35275309-96d9-4595-8fea-62a47a370344",
+						"type": "text/javascript",
+						"exec": [
+							"var JsonData=JSON.parse(responseBody);",
+							"pm.test(\"Body is username\")==responseBody.has(data.id);",
+							"",
+							"pm.test(\"Body is password\")==responseBody.has(data.name);",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"auth": null,
+			"time": 1519636875474,
+			"name": "getdetails",
+			"description": "",
+			"collectionId": "a50ad237-9aa1-348a-74d1-a7142504f8a5",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "var JsonData=JSON.parse(responseBody);\npm.test(\"Body is username\")==responseBody.has(data.id);\n\npm.test(\"Body is password\")==responseBody.has(data.name);\n\npm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "bc2ea94f-1883-2a87-5ef1-78ad3609da8e",
+			"headers": "",
+			"headerData": [],
+			"url": "http://postman-echo.com/get?username={{username}}&password={{password}}",
+			"folder": "164e1c36-88b6-0e85-f331-949d92e1e2ce",
+			"queryParams": [
+				{
+					"key": "username",
+					"value": "{{username}}",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "{{password}}",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d10b54e4-fea7-4de9-88b7-653d0da39a32",
+						"type": "text/javascript",
+						"exec": [
+							"var JsonData=JSON.parse(responseBody);",
+							"pm.test(\"Body is username\")==responseBody.has(data.username);",
+							"",
+							"pm.test(\"Body is password\")==responseBody.has(data.password);",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"auth": null,
+			"time": 1520241069346,
+			"name": "UserLoginWithEnv",
+			"description": "",
+			"collectionId": "a50ad237-9aa1-348a-74d1-a7142504f8a5",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "var JsonData=JSON.parse(responseBody);\npm.test(\"Body is username\")==responseBody.has(data.username);\n\npm.test(\"Body is password\")==responseBody.has(data.password);\n\npm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "c8947c64-bf5e-6f1a-b12f-cb3694e59f7b",
+			"headers": "",
+			"headerData": [],
+			"url": "http://postman-echo.com/get?username={{username}}&password={{password}}",
+			"folder": "0884c915-35bf-e8d2-3d62-c87bd7d2e3ed",
+			"queryParams": [
+				{
+					"key": "username",
+					"value": "{{username}}",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "{{password}}",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b596f1a5-2387-46fd-b209-bbd6b458d7ca",
+						"type": "text/javascript",
+						"exec": [
+							"/*var JsonData=JSON.parse(responseBody);",
+							"tests[\"Body is username\"]=responseBody.has(data.username);",
+							"",
+							"tests[\"Body is password\"]=responseBody.has(data.password);",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"*/",
+							"var JsonData=JSON.parse(responseBody);",
+							"pm.test(\"Body is username\")==responseBody.has(data.username);",
+							"",
+							"pm.test(\"Body is password\")==responseBody.has(data.password);",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"auth": null,
+			"time": 1519626396704,
+			"name": "UserLogin",
+			"description": "",
+			"collectionId": "a50ad237-9aa1-348a-74d1-a7142504f8a5",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "/*var JsonData=JSON.parse(responseBody);\ntests[\"Body is username\"]=responseBody.has(data.username);\n\ntests[\"Body is password\"]=responseBody.has(data.password);\n\npm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\n*/\nvar JsonData=JSON.parse(responseBody);\npm.test(\"Body is username\")==responseBody.has(data.username);\n\npm.test(\"Body is password\")==responseBody.has(data.password);\n\npm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});",
+			"currentHelper": null,
+			"helperAttributes": null
+		}
+	]
+}
